@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "./author";
+
+service AuthorService {
+    rpc CreateAuthor (CreateAuthorRequest) returns (CreateAuthorResponse) {}
+    rpc ReadAuthor (ReadAuthorRequest) returns (ReadAuthorResponse) {}
+    rpc UpdateAuthor (UpdateAuthorRequest) returns (UpdateAuthorResponse) {}
+    rpc DeleteAuthor (DeleteAuthorRequest) returns (DeleteAuthorResponse) {}
+}
+
+message CreateAuthorRequest {
+    string name = 1;
+}
+
+message CreateAuthorResponse {
+    string message = 1;
+}
+
+message ReadAuthorRequest {
+    uint32 id = 1;
+}
+
+message ReadAuthorResponse {
+    string name = 1;
+}
+
+message UpdateAuthorRequest {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message UpdateAuthorResponse {
+    string message = 1;
+}
+
+message DeleteAuthorRequest {
+    uint32 id = 1;
+}
+
+message DeleteAuthorResponse {
+    string message = 1;
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "./publisher";
+
+service PublisherService {
+    rpc CreatePublisher (CreatePublisherRequest) returns (CreatePublisherResponse) {}
+    rpc ReadPublisher (ReadPublisherRequest) returns (ReadPublisherResponse) {}
+    rpc UpdatePublisher (UpdatePublisherRequest) returns (UpdatePublisherResponse) {}
+    rpc DeletePublisher (DeletePublisherRequest) returns (DeletePublisherResponse) {}
+}
+
+message CreatePublisherRequest {
+    string name = 1;
+}
+
+message CreatePublisherResponse {
+    string message = 1;
+}
+
+message ReadPublisherRequest {
+    uint32 id = 1;
+}
+
+message ReadPublisherResponse {
+    string name = 1;
+}
+
+message UpdatePublisherRequest {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message UpdatePublisherResponse {
+    string message = 1;
+}
+
+message DeletePublisherRequest {
+    uint32 id = 1;
+}
+
+message DeletePublisherResponse {
+    string message = 1;
+}
